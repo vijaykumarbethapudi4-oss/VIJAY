@@ -205,25 +205,39 @@ birthdays, receptions and celebrations.
 
 <div class="bookingBox">
 
-<h2>Book Event</h2>
+<h2>✨ Book Your Event ✨</h2>
 
-<input id="name"
-placeholder="Name">
+<input id="name" type="text" placeholder="👤 Enter Name">
 
-<input id="phone"
-placeholder="Phone">
+<input id="phone" type="number" placeholder="📱 Phone Number">
 
-<input id="event"
-placeholder="Event Type">
+<select id="event">
+
+<option value="">🎊 Select Event</option>
+<option>Wedding</option>
+<option>Birthday</option>
+<option>Reception</option>
+<option>Engagement</option>
+<option>Corporate Event</option>
+
+</select>
+
+<input type="date" id="date">
+
+<textarea
+id="message"
+placeholder="📝 Additional Details">
+</textarea>
 
 <button onclick="confirmBooking()">
-Confirm
+
+🚀 Confirm Booking
+
 </button>
 
 </div>
 
 </div>
-
 
 <script src="script.js"></script>
 
