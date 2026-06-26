@@ -27,25 +27,28 @@ document.getElementById("modal").style.display="none";
 function confirmBooking(){
 
 let name=document.getElementById("name").value;
-
 let phone=document.getElementById("phone").value;
-
 let event=document.getElementById("event").value;
+let date=document.getElementById("date").value;
 
-
-if(name==="" || phone==="" || event===""){
+if(
+name==="" ||
+phone==="" ||
+event==="" ||
+date===""
+){
 
 alert("⚠ Please fill all details");
-
 return;
 
 }
 
 
+// Create popup
+
 let popup=document.createElement("div");
 
-popup.classList.add("successPopup");
-
+popup.className="successPopup";
 
 popup.innerHTML=`
 
@@ -55,9 +58,19 @@ popup.innerHTML=`
 
 <h2>VIJAY EVENTS</h2>
 
-<p>We Will Contact You Soon</p>
+<p>
+Thank you ${name}
+</p>
 
-<div>
+<p>
+Event : ${event}
+</p>
+
+<p>
+Date : ${date}
+</p>
+
+<div class="emoji">
 
 🎊 ✨ 🥳 🎉 🎆
 
@@ -70,12 +83,16 @@ popup.innerHTML=`
 document.body.appendChild(popup);
 
 
+// animate
+
 setTimeout(()=>{
 
 popup.classList.add("show");
 
 },100);
 
+
+// remove after 4 sec
 
 setTimeout(()=>{
 
@@ -85,22 +102,14 @@ setTimeout(()=>{
 
 popup.remove();
 
-document.getElementById("modal").style.display="none";
+document.getElementById("modal")
+.style.display="none";
 
 },1000);
 
 },4000);
 
-
-
-document.getElementById("name").value="";
-
-document.getElementById("phone").value="";
-
-document.getElementById("event").value="";
-
 }
-
 
 
 // Close modal if clicked outside
